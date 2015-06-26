@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+	<style type="text/css">.olControlAttribution, .olControlZoom {display: none !important;}</style>
+	<script type="text/javascript" src="http://libs.cartocdn.com/cartodb.js/v3/3.14/cartodb.core.js"></script>
+	<script type="text/javascript" src="/jscripts/openLayers.2.13.1.js"></script>
+</head>
+<body>
+	<div id="map" class="map"></div>
+</body>
+<script type="text/javascript">
+map = new OpenLayers.Map('map', {
+	projection: new OpenLayers.Projection('EPSG:3857'),
+	layers: [new OpenLayers.Layer.OSM(),],
+	center: new OpenLayers.LonLat(-87.07, 20.63).transform('EPSG:4326', 'EPSG:3857'),
+	zoom: 17});
+    
+cartodb.Tiles.getTiles({
+	type: 'cartodb',
+	user_name: 'dbauszus',
+	sublayers: [{
+		sql: 'SELECT * FROM playa_test',
+		cartocss: '#playa_test{polygon-fill: #FF6600; polygon-opacity: 0; line-color: #F11810; line-width: 1; line-opacity: 1;}'}]},
+		function(tileTemplate) {
+			var tilesUrl = [];
+			for(var i = 0; i < 4; ++i) {
+				tilesUrl.push(tileTemplate.tiles[0].replace('{s}','abcd'[i]).replace('{z}','${z}').replace('{x}','${x}').replace('{y}','${y}'));}
+			var layerCartodb = new OpenLayers.Layer.XYZ('CartoDB example', tilesUrl, {
+				sphericalMercator: true,
+				isBaseLayer: false});
+			map.addLayer(layerCartodb);});
+</script>
+</html>

@@ -1,0 +1,37 @@
+#map.hover {
+	cursor: copy;
+	}
+	
+#status {
+	position: absolute;
+	top: 30px;
+	width: 100%;
+	text-align: center;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: 900;
+	font-size: 30px;
+	color: white;
+	text-shadow: 1px 1px 2px black;
+	}
+	
+#mask {
+	display: none;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.5);
+	}
+
+#progress {
+	position: absolute;
+	top: 70px;
+	width: 100%;
+	text-align: center;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: 900;
+	font-size: 70px;
+	color: white;
+	text-shadow: 1px 1px 2px black;
+	}

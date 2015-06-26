@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+	<style type="text/css">.olControlAttribution, .olControlZoom {display: none !important;}</style>
+	<script type="text/javascript" src="http://libs.cartocdn.com/cartodb.js/v3/3.14/cartodb.core.js"></script>
+	<script type="text/javascript" src="/jscripts/openLayers.2.13.1.js"></script>
+</head>
+<body>
+	<div id="map" class="map"></div>
+</body>
+<script type="text/javascript">
+layerXYZ = new OpenLayers.Layer.XYZ('XYZ layer',
+		'http://storage.googleapis.com/playa-demo-dbauszus/solidaridad-zf/${z}/${x}/${y}.png',
+		{isBaseLayer: false});
+map = new OpenLayers.Map('map', {
+	projection: new OpenLayers.Projection('EPSG:3857'),
+	layers: [new OpenLayers.Layer.OSM(),layerXYZ],
+	center: new OpenLayers.LonLat(-87.07, 20.63).transform('EPSG:4326', 'EPSG:3857'),
+	zoom: 17});
+
+</script>
+</html>

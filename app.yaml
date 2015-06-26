@@ -1,0 +1,23 @@
+application: dbauszus-webmaps
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /materialize
+  static_dir: materialize
+- url: /jscripts
+  static_dir: jscripts
+- url: /data
+  static_dir: data
+- url: /stylesheets
+  static_dir: stylesheets
+- url: /.*
+  script: main.app
+  
+libraries:
+- name: webapp2
+  version: latest
+- name: jinja2
+  version: latest

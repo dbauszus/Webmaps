@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+	<link type="text/css" rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/3.14/themes/css/cartodb.css" />
+	<script src="http://libs.cartocdn.com/cartodb.js/v3/3.14/cartodb.js"></script>
+	<title></title>
+</head>
+<body>
+	<div id="map" class="map"></div>
+</body>
+<script>
+cartodb.createVis('map', 'https://dbauszus.cartodb.com/api/v2/viz/fd551daa-ef8c-11e4-91e1-0e853d047bba/viz.json', {
+	center_lat: 20.63,
+	center_lon: -87.07,
+	zoom: 17});
+</script>
+</html>

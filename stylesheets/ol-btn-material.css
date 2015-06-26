@@ -1,0 +1,44 @@
+.btn-floating {
+	background-color: #f44336;
+}
+
+#btnSelect {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+}
+#btnEdit {
+	position: absolute;
+	top: 20px;
+	right: 80px;
+}
+#btnDrawPoint {
+	position: absolute;
+	top: 20px;
+	right: 140px;
+}
+#btnDrawLine {
+	position: absolute;
+	top: 20px;
+	right: 200px;
+}
+#btnDrawPoly {
+	position: absolute;
+	top: 20px;
+	right: 260px;
+}
+#btnDelete {
+	position: absolute;
+	top: 20px;
+	right: 320px;
+}
+#btnZoomIn {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+}
+#btnZoomOut {
+	position: absolute;
+	top: 80px;
+	left: 20px;
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link type="text/css" rel="stylesheet" href="/materialize/css/materialize.min.css"  media="screen,projection"/>
+	<link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+	<link type="text/css" rel="stylesheet" href="/stylesheets/ol-btn-material.css" />
+	<link type="text/css" rel="stylesheet" href="/stylesheets/ol-popup.css" />
+	<script type="text/javascript" src="/jscripts/jQuery.2.1.4.min.js"></script>
+	<script type="text/javascript" src="/materialize/js/materialize.min.js"></script>
+	<script type="text/javascript" src="/jscripts/openLayers.3.5.0.js"></script>
+</head>
+<body>
+	<div id="map" class="map"></div>
+	<div id="popup" class="ol-popup">
+		<div id="popup-closer" class="ol-popup-closer"><i class="mdi-navigation-close"></i></div>
+		<div>status</div>
+		<div id="popup-status">n/a</div>
+		<div>tienda</div>
+		<div id="popup-tiendas">n/a</div>
+	</div>
+	<div id="btnSelect" class="btnMenu btn-floating btn-large waves-effect waves-light teal"><i class="mdi-action-speaker-notes"></i></div>
+	<div id="btnEdit" class="btnMenu btn-floating btn-large waves-effect waves-light teal"><i class="mdi-editor-mode-edit"></i></div>
+	<div id="btnDrawPoint" class="btnMenu btn-floating btn-large waves-effect waves-light teal"><i class="mdi-maps-place"></i></div>
+	<div id="btnDrawLine" class="btnMenu btn-floating btn-large waves-effect waves-light teal"><i class="mdi-social-share"></i></div>
+	<div id="btnDrawPoly" class="btnMenu btn-floating btn-large waves-effect waves-light teal"><i class="mdi-device-signal-cellular-null"></i></div>
+	<div id="btnDelete" class="btnMenu btn-floating btn-large waves-effect waves-light teal"><i class="mdi-action-delete"></i></div>
+	<div id="btnZoomIn" class="btn-floating btn-large waves-effect waves-light teal"><i class="mdi-content-add"></i></div>
+	<div id="btnZoomOut" class="btn-floating btn-large waves-effect waves-light teal"><i class="mdi-content-remove"></i></div>
+</body>
+<script type="text/javascript" src="/jscripts/ol3-wfs-t.js"></script>
+</html>

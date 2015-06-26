@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link type="text/css" rel="stylesheet" href="/stylesheets/ol3.css" />
+	<link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+	<script type="text/javascript" src="http://libs.cartocdn.com/cartodb.js/v3/3.14/cartodb.core.js"></script>
+	<script type="text/javascript" src="/jscripts/openLayers.3.5.0.js"></script>
+</head>
+<body>
+	<div id="map" class="map"></div>
+</body>
+<script type="text/javascript">
+map = new ol.Map({
+	target: 'map',
+	layers: [new ol.layer.Tile({source: new ol.source.OSM()})],
+	view: new ol.View({
+		center : ol.proj.transform([ -87.07, 20.63 ], 'EPSG:4326', 'EPSG:3857'),
+		zoom : 17})});
+    
+cartodb.Tiles.getTiles({
+	type: 'cartodb',
+	user_name: 'dbauszus',
+	sublayers: [{
+		sql: 'SELECT * FROM playa_test',
+		cartocss: '#playa_test{polygon-fill: #FF6600; polygon-opacity: 0; line-color: #F11810; line-width: 1; line-opacity: 1;}'}]},
+		function(tileTemplate) {
+			var tilesUrl = [];
+			for(var i = 0; i < 4; ++i) {
+				tilesUrl.push(tileTemplate.tiles[0].replace('{s}','abcd'[i]));}
+			var layerCartodb = new ol.layer.Tile({
+				source: new ol.source.XYZ({
+					urls: tilesUrl})});
+			map.addLayer(layerCartodb);});
+</script>
+</html>
