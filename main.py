@@ -24,7 +24,7 @@ class OL3(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template('ol3.html')
         self.response.out.write(template.render())
-   
+        
 class OL3_CARTODB(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template('ol3-cartodb.html')
